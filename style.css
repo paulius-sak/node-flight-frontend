@@ -1,0 +1,64 @@
+
+button {
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 8px 0;
+    width: 100px;
+    margin: auto;
+    cursor: pointer;
+    background-color: rgb(104, 143, 229);
+    color: #fff;
+}
+button:hover {
+    background-color: rgb(69, 119, 226);
+}
+.flight-cards {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+}
+
+.flight-card {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    padding: 30px;
+    background-color: #d8d5d5;
+}
+
+.flight-card:hover {
+    cursor: pointer;
+    background-color: #f5f2f2;
+}
+
+p {
+    margin: 0;
+    font-size: 19px;
+}
+
+.add-button {
+    width: 200px;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.add-message {
+    text-align: center;
+    color: rgb(10, 176, 10);
+    font-size: 18px;
+}
+a {
+    color: rgb(50, 48, 48);
+    text-decoration: none;
+}
+
