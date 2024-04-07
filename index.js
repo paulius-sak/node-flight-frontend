@@ -20,10 +20,10 @@ fetch("http://localhost:3001/flights")
       titleLink.textContent = "Flight Details Here ✈︎";
       titleLink.setAttribute("href", "../flight/flight.html");
       titleLink.addEventListener("click", (event) => {
-        // Prevent the default action of the link (i.e., following the href attribute)
+
         event.preventDefault();
         
-        // Extract the flight ID from the flight object
+
         const flightId = flight.flightId;
       
         // Redirect to the flight.html page with the flight ID as a query parameter
