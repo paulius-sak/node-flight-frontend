@@ -11,12 +11,24 @@ fetch("http://localhost:3001/flights")
 
     flights.forEach((flight) => {
 
-      const flightCard = document.createElement("a");
+      const flightCard = document.createElement("div");
       flightCard.classList.add("flight-card");
-      flightCard.setAttribute("href", "../flight/flight.html");
+      
 
-      const title = document.createElement("h2");
-      title.textContent = "✈︎ Flight Details";
+      const titleLink = document.createElement("a");
+      titleLink.classList.add("title-link")
+      titleLink.textContent = "Flight Details Here ✈︎";
+      titleLink.setAttribute("href", "../flight/flight.html");
+      titleLink.addEventListener("click", (event) => {
+        // Prevent the default action of the link (i.e., following the href attribute)
+        event.preventDefault();
+        
+        // Extract the flight ID from the flight object
+        const flightId = flight.flightId;
+      
+        // Redirect to the flight.html page with the flight ID as a query parameter
+        window.location.href = `../flight/flight.html?id=${flightId}`;
+      });
 
       const price = document.createElement("p");
       price.innerHTML = `Price: $${flight.price}`;
@@ -37,14 +49,15 @@ fetch("http://localhost:3001/flights")
       const addBtn = document.createElement("button")
       addBtn.classList.add("add-button")
       addBtn.id = "add-button"
-      addBtn.innerText = "add to basket"
+      addBtn.innerText = "Add To Basket"
 
       
 
       
 
-      addBtn.addEventListener("click", () => {
-        addToCart(flight.id);
+      addBtn.addEventListener("click", (event) => {
+        addToCart(flight.flightId);
+        console.log(flight.flightId)
 
         const addMessage = document.createElement("p")
         addMessage.classList.add("add-message")
@@ -56,10 +69,11 @@ fetch("http://localhost:3001/flights")
           flightCard.removeChild(addMessage);
         }, 3000);
 
+        event.preventDefault();
       });
 
 
-      flightCard.appendChild(title);
+      flightCard.appendChild(titleLink);
       flightCard.appendChild(price);
       flightCard.appendChild(departureCity);
       flightCard.appendChild(destinationCity);

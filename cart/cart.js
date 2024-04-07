@@ -35,7 +35,7 @@ fetch("http://localhost:3001/carts/0cddf1b2-d0e8-4c68-9031-5647a21a7218")
       const removeBtn = document.createElement("button");
       removeBtn.innerText = "Remove From Cart";
       removeBtn.addEventListener("click", () => {
-        fetch(`http://localhost:3001/carts/${cart.cartId}/flight/${flight.id}`, {
+        fetch(`http://localhost:3001/carts/${cart.cartId}/flight/${flight.flightId}`, {
           method: 'DELETE'
         })
         .then((response) => {

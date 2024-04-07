@@ -1,9 +1,9 @@
 
-export function addToCart(id) {
+export const addToCart = (flightId) => {
  
     const userEmail = "guest1@gmail.com";
   
-    fetch(`http://localhost:3001/addToCart/${id}`, {
+    fetch(`http://localhost:3001/addToCart/${flightId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

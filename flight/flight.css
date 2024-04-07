@@ -1,0 +1,21 @@
+body {
+    font-size: 18px;
+}
+
+.delete-flight-btn {
+    font-size: 18px;
+  background-color: rgb(209, 81, 34);
+  border: none;
+  border-radius: 4px;
+  padding: 5px 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#flight-details {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    text-align: center;
+    margin: auto;
+}
