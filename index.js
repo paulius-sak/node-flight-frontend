@@ -18,12 +18,10 @@ fetch("http://localhost:3001/flights")
       const titleLink = document.createElement("a");
       titleLink.classList.add("title-link")
       titleLink.textContent = "Flight Details Here ✈︎";
-      titleLink.setAttribute("href", "../flight/flight.html");
-      titleLink.addEventListener("click", (event) => {
 
+      titleLink.addEventListener("click", (event) => {
         event.preventDefault();
         
-
         const flightId = flight.flightId;
       
         // Redirect to the flight.html page with the flight ID as a query parameter
